@@ -1,22 +1,23 @@
 import { site } from "../_data/site-content";
 import { ArrowUpRight } from "./icons";
+import { Reveal } from "./motion";
 
 export function About() {
   return (
-    <section className="about section-pad" id="a-propos"><div className="shell about-grid reveal">
+    <section className="about section-pad" id="a-propos"><Reveal className="shell about-grid">
       <div className="section-kicker"><span>05</span><span>À propos</span></div>
       <div><h2>Une structure tech française tournée vers l’opérationnel.</h2><div className="about-copy"><p>MAELLA accompagne les produits numériques là où le développement rencontre l’infrastructure, les intégrations et l’exploitation.</p><p>Notre rôle : transformer une application en un service réellement accessible, maintenable et prêt à évoluer.</p></div></div>
-    </div></section>
+    </Reveal></section>
   );
 }
 
 export function ContactCta() {
   return (
-    <section className="contact" id="contact"><div className="shell contact-inner reveal">
+    <section className="contact" id="contact"><Reveal className="shell contact-inner" y={40}>
       <p className="contact-label"><span className="status-dot" /> Un projet à mettre en ligne ?</p>
       <h2>Votre SaaS mérite mieux<br />qu’un localhost<span className="signal">.</span></h2>
       <a className="contact-link" href={site.contactHref}><span>Passons-le en production.</span><ArrowUpRight className="contact-arrow" /></a>
-    </div></section>
+    </Reveal></section>
   );
 }
 
