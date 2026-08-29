@@ -47,7 +47,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .header-cta:hover .icon, .footer-contact a:hover .icon { transform: translate(3px, -3px); }
 .mobile-menu { display: none; }
 
-.hero { position: relative; min-height: max(760px, 100svh); background: var(--ink); color: var(--white); overflow: hidden; }
+.hero {
+  position: relative;
+  min-height: max(760px, 100svh);
+  background-color: var(--ink);
+  background-image: url("/imgs/herobg.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: auto 92%;
+  color: var(--white);
+  overflow: hidden;
+}
 .hero::after { content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: var(--signal); filter: blur(190px); opacity: .09; right: 5%; bottom: -15%; pointer-events: none; }
 .hero-grid { position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(to right, rgb(255 255 255 / .18) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / .12) 1px, transparent 1px); background-size: calc((100vw - 48px) / 6) 100%, 100% 82px; background-position: 24px 0; mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%); }
 .hero-inner { position: relative; z-index: 1; min-height: max(760px, 100svh); padding-top: 82px; display: flex; flex-direction: column; }
@@ -141,9 +151,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .principle-card h3 { margin: -4px 0 70px; font-size: clamp(1.65rem, 3vw, 2.6rem); letter-spacing: -.04em; font-weight: 520; }
 .principle-card p { grid-column: 2; max-width: 48ch; margin: 0; color: var(--graphite); line-height: 1.65; }
 
-.about { background: var(--signal); color: var(--ink); }
+.about {
+  background-color: var(--signal);
+  background-image: url("/imgs/redmen.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: clamp(220px, 24vw, 380px) auto;
+  color: var(--ink);
+}
 .about .section-kicker span:first-child { color: var(--ink); opacity: .45; }
 .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
+.about-grid > div:last-child { transform: translateY(clamp(28px, 3vw, 46px)); }
+.about .section-kicker {
+  padding-left: clamp(40px, 7vw, 108px);
+  transform: translateY(clamp(-56px, -4vw, -34px));
+}
 .about h2 { max-width: 13ch; }
 .about-copy { margin-top: clamp(64px, 8vw, 110px); display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; }
 .about-copy p { max-width: 38ch; margin: 0; line-height: 1.65; }
@@ -190,7 +212,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   :root { --shell: min(100% - 32px, 1440px); }
   .section-pad { padding-block: 88px; }
   .hero-grid { background-size: calc((100vw - 32px) / 3) 100%, 100% 82px; background-position: 16px 0; }
-  .hero { min-height: 700px; }
+  .hero { min-height: 700px; background-position: center bottom; background-size: auto 78%; }
   .hero-inner { min-height: 700px; }
   .hero-meta { gap: 20px; align-items: flex-start; }
   .hero-meta p:last-child { max-width: 22ch; text-align: right; line-height: 1.5; }
@@ -219,6 +241,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .principles-sticky { position: static; }
   .principles-sticky h2 { margin-top: 70px; }
   .principle-card { grid-template-columns: 44px 1fr; }
+  .about-grid > div:last-child, .about .section-kicker { transform: none; }
+  .about .section-kicker { padding-left: 0; }
   .about-copy { grid-template-columns: 1fr; }
   .contact h2 br { display: none; }
   .footer-top { min-height: 300px; flex-direction: column; }
